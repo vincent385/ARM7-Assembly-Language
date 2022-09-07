@@ -7,7 +7,4 @@ objcopy.exe
 thumb.bat
 
 # ROM
-ROM/script offsets.txt
-ROM/*.gba
-ROM/*.sav
-ROM/*.ss1
+ROM/
