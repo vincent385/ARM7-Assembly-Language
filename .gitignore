@@ -1,2 +1,7 @@
 # Binary Files
 /*.bin
+
+# Thumb Compiler
+as.exe
+objcopy.exe
+thumb.bat
