@@ -1,0 +1,44 @@
+push - Pushes specified registers within braces into a stack
+- Examples: push {r0-r6, lr} ; push {r0} ; push {r0, r3, r5, lr}
+
+pop - Pops specified registers within a braces from a stack
+- Examples: pop {r0-r6, lr} ; pop {r0} ; pop {r0, r3, r5, lr}
+
+add - Adds the the values in two given registers or adds an immediate (0x0 to 0xFF limited) to a register. Result is in first listed register.
+Can only add two terms at a time.
+- Examples: add r0, r0, r1 ; add r0, r0, #0xFF ; add r0, r1, r3 ; add r0, r0, r0
+
+sub - Subtracts the the values in two given registers or subtracts an immediate (0x0 to 0xFF limited) to a register. Result is in first listed
+register. Can only subtract two terms at a time.
+- Examples: sub r0, r0, r1 ; sub r0, r0, #0xFF ; sub r0, r1, r3 ; add r0, r0, r0
+
+mul - Multiplies the values in two given registers. Cannot multiply immediates or immediates with registers. Result is in first listed register.
+Can only multiply two terms at a time.
+- Examples: mul r1, r1, r2 ; mul r3, r2, r1 ; mul r1, r1, r1
+
+lsl - Performs a bit shift left on a register. Can shift by an immediates (0x0 to 0xFF limited) or by value in register. Any shift over 0x20 is useless.
+- Examples: lsl r0, r0, #0x13 ; lsl r0, r0, r3 ; lsl r0, r3, #0x3
+
+lsr - Performs a bit shift right on a register. Can shift by an immediates (0x0 to 0xFF limited) or by value in register. Any shift over 0x20 is useless.
+- Examples: lsr r0, r0, #0x13 ; lsr r0, r0, r3 ; lsr r0, r3, #0x3
+
+ldr - Loads into a register a value of 4 bytes from the immediate or register source. Immediates are restricted to 0x0 to 0xFFFFFFFF.
+- Note worthy: inside the closed brackets, you can perform addition by doing [register, immediate to add]
+- Examples: ldr r0, [r1] ; ldr r0, =(0xFFFFFFFF) ; ldr r0, [r0, #0x4]
+
+ldrh - Loads into a register a value of 2 bytes from the immediate or register source. Immediates are restricted to 0x0 to 0xFFFF.
+- Note worthy: inside the closed brackets, you can perform addition by doing [register, immediate to add]
+- Examples: ldrh r0, [r1] ; ldrh r0, =(0xFFFF) ; ldrh r0, [r0, #0x6]
+
+ldrb - Loads into a register a value of 1 byte from the immediate or register source. Immediates are restricted to 0x0 to 0xFF.
+- Note worthy: inside the closed brackets, you can perform addition by doing [register, immediate to add]
+- Examples: ldrb r0, [r1] ; ldr r0, =(0xFF) ; ldrb r0, [r0, #0x1]
+
+str - Stores into an address based on register specified in closed brackets, 4 bytes of data from first register.
+- Examples: str r0, [r1] ; str r0, [r3, #0x1]
+
+strh - Stores into an address based on register specified in closed brackets, 2 bytes of data from first register.
+- Examples: strh r0, [r1] ; strh r0, [r3, #0x2]
+
+strb - Stores into an address based on register specified in closed brackets, 1 bytes of data from first register.
+- Examples: strb r0, [r1] ; strb r0, [r3, #0x1] 
