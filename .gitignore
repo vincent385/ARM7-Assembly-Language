@@ -1,7 +1,13 @@
 # Binary Files
-/*.bin
+*.bin
 
 # Thumb Compiler
 as.exe
 objcopy.exe
 thumb.bat
+
+# ROM
+ROM/script offsets.txt
+ROM/*.gba
+ROM/*.sav
+ROM/*.ss1
